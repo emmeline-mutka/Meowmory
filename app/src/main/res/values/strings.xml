@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Meowmory</string>
+    <string name="welcome">WELCOME TO MEOWMORY!</string>
+    <string name="click_description">THIS IS A MEMORY GAME WHERE YOU MATCH PAIRS TO WIN.</string>
+    <string name="start">START</string>
+    <string name="new_game">New game</string>
+    <string name="congrats">Congrats all pairs were found!</string>
+    <string name="game_description">If you find two pairs you\'re allowed to continue, otherwise it\'s the next person\'s turn.</string>
+
 </resources>
