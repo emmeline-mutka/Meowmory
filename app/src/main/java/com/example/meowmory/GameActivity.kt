@@ -39,8 +39,6 @@ class GameActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // val alertDialogBuilder = AlertDialog.Builder(this)
-
         images.shuffle()
 
         for(i in 0..11) {
@@ -68,23 +66,13 @@ class GameActivity : AppCompatActivity() {
                     clicked = 0
                     totalCards++
                     goToFinish()
-                } /*else if (buttons[i].text != buttons[lastClicked].text) {
-                    turnBackCard(buttons[i])
-                }*/
+                }
                 } else if (clicked == 0) {
                 turnOver = false
+                }
             }
-            }
-
-
-
-            }
+        }
     }
-
-    /*fun turnBackCard (button: Button) {
-        button.setBackgroundResource(cardDown)
-        button.text = "cardDown"
-    }*/
 
    fun goToFinish () {
        if (totalCards == 6) {

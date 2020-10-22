@@ -13,9 +13,8 @@
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="400dp"
+        android:layout_height="32sp"
+        android:layout_marginTop="300sp"
         android:gravity="center"
         android:shadowColor="#E5E5E5"
         android:shadowDx="10"
@@ -23,9 +22,8 @@
         android:shadowRadius="2"
         android:text="@string/welcome"
         android:textColor="#000000"
-        android:textSize="26dp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,25 +35,25 @@
         android:gravity="center"
         android:text="@string/click_description"
         android:textColor="#000000"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:backgroundTint="#5002E3"
         android:gravity="center"
-        android:background="#5002E3"
         android:text="@string/start"
         android:textColor="#D3CFCF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/clickDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
