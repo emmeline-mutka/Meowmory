@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Meowmory</string>
-    <string name="new_game">Spela igen</string>
-    <string name="congrats">Grattis, alla paren är hittade!</string>
-    <string name="game_description">Om du hittar ett par får du fortsätta, men om du inte hittar två likadana bilder är det nästa persons tur.</string>
     <string name="welcome">VÄLKOMMEN TILL MEOWMORY!</string>
     <string name="click_description">DET HÄR ÄR ETT MEMORY SPEL DÄR DU MATCHAR PAR FÖR ATT VINNA.</string>
     <string name="start">STARTA</string>
+    <string name="game_description">Om du hittar ett par får du fortsätta, men om du inte hittar två likadana bilder är det nästa persons tur.</string>
+    <string name="congrats">Grattis, alla paren är hittade!</string>
+    <string name="new_game">Spela igen</string>
 </resources>
