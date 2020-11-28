@@ -1,6 +1,5 @@
 package com.example.meowmory
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +10,8 @@ import android.widget.Button
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_game.*
 import com.example.meowmory.R.drawable.*
+import java.util.*
+import kotlin.system.measureTimeMillis
 
 class GameActivity : AppCompatActivity() {
 
@@ -20,65 +21,90 @@ class GameActivity : AppCompatActivity() {
     var lastClicked = -1
     var totalCards = 0
 
+    //private lateinit var gameTimer : GameTimer;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+        //Starta timer
 
-        val button = findViewById<Button>(R.id.finishButton)
+        //countTime()
+           // val begin = System.currentTimeMillis()
+            /* code starts */
 
-        val buttons = arrayOf(cardbg1, cardbg2, cardbg3, cardbg4, cardbg5, cardbg6,
-            cardbg7, cardbg8, cardbg9, cardbg10, cardbg11, cardbg12)
+            val button = findViewById<Button>(R.id.finishButton)
 
-        val images = mutableListOf(blackcat, calicocat, graycat, orangecat, tortiecat, whitecat,
-            blackcat, calicocat, graycat, orangecat, tortiecat, whitecat)
+            val buttons = arrayOf(
+                cardbg1, cardbg2, cardbg3, cardbg4, cardbg5, cardbg6,
+                cardbg7, cardbg8, cardbg9, cardbg10, cardbg11, cardbg12
+            )
 
-        button.setOnClickListener {
+            val images = mutableListOf(
+                blackcat, calicocat, graycat, orangecat, tortiecat, whitecat,
+                blackcat, calicocat, graycat, orangecat, tortiecat, whitecat
+            )
 
-            val intent = Intent(this, FinishActivity::class.java)
+            button.setOnClickListener {
 
-            startActivity(intent)
-        }
+                val intent = Intent(this, FinishActivity::class.java)
 
-        images.shuffle()
+                startActivity(intent)
+            }
 
-        for(i in 0..11) {
-            buttons[i].text = "cardDown"
-            buttons[i].textSize = 0.0F
-            buttons[i].setOnClickListener {
-                if (buttons[i].text == "cardDown" && !turnOver) {
-                    buttons[i].setBackgroundResource(images[i])
-                    buttons[i].setText(images[i])
-                    if (clicked == 0) {
-                        lastClicked = i
+            images.shuffle()
+
+            for (i in 0..11) {
+                buttons[i].text = "cardDown"
+                buttons[i].textSize = 0.0F
+                buttons[i].setOnClickListener {
+                    if (buttons[i].text == "cardDown" && !turnOver) {
+                        buttons[i].setBackgroundResource(images[i])
+                        buttons[i].setText(images[i])
+                        if (clicked == 0) {
+                            lastClicked = i
+                        }
+                        clicked++
+                    } else if (buttons[i].text !in "cardDown") {
+                        buttons[i].setBackgroundResource(cardDown)
+                        buttons[i].text = "cardDown"
+                        clicked--
                     }
-                    clicked++
-                } else if (buttons[i].text !in "cardDown") {
-                    buttons[i].setBackgroundResource(cardDown)
-                    buttons[i].text = "cardDown"
-                    clicked--
-                }
-            if (clicked == 2) {
-                turnOver = true
-                if (buttons[i].text == buttons[lastClicked].text) {
-                    buttons[i].isClickable = false
-                    buttons[lastClicked].isClickable = false
-                    turnOver = false
-                    clicked = 0
-                    totalCards++
-                    goToFinish()
-                }
-                } else if (clicked == 0) {
-                turnOver = false
+                    if (clicked == 2) {
+                        turnOver = true
+                        if (buttons[i].text == buttons[lastClicked].text) {
+                            buttons[i].isClickable = false
+                            buttons[lastClicked].isClickable = false
+                            turnOver = false
+                            clicked = 0
+                            totalCards++
+                            goToFinish()
+                        }
+                    } else if (clicked == 0) {
+                        turnOver = false
+                    }
                 }
             }
+
+            // sleep for 2 seconds
+            //Thread.sleep(2000)
+        // val end = System.currentTimeMillis()
+    //println("Elapsed Time in milliseconds : ${end - begin}")
+
+    }
+
+    fun goToFinish() {
+        if (totalCards == 6) {
+            val intent = Intent(this, FinishActivity::class.java)
+            startActivity(intent)
         }
     }
 
-   fun goToFinish () {
-       if (totalCards == 6) {
-           val intent = Intent(this, FinishActivity::class.java)
+    //val elapsed = measureTimeMillis {
+      //  Thread.sleep(100)
+        //println("Measuring time via measureTimeMillis")
+    //}
+    //assertThat(elapsed).isGreaterThanOrEqualTo(100)
 
-           startActivity(intent)
-       }
-   }
 }
+
+

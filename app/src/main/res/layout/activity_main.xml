@@ -4,24 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="#1A7F9E"
+    tools:context=".MainActivity">
 
-    android:background="@drawable/pawprints"
-    android:backgroundTint="#C9FFFFFF"
-    android:backgroundTintMode="src_over">
+    <ImageView
+        android:id="@+id/pawprintImage"
+        android:layout_width="768dp"
+        android:layout_height="768dp"
+        android:alpha="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pawprints" />
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="32sp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="160dp"
         android:gravity="center"
-        android:shadowColor="#E5E5E5"
-        android:shadowDx="10"
-        android:shadowDy="10"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
         android:shadowRadius="2"
         android:text="@string/welcome"
-        android:textColor="#000000"
+        android:textColor="#BABABA"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,27 +41,69 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
         android:text="@string/click_description"
-        android:textColor="#000000"
+        android:textColor="#BABABA"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <TextView
+        android:id="@+id/clickDescription2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text="@string/click_description2"
+        android:textColor="#BABABA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickDescription" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:backgroundTint="#5002E3"
-        android:gravity="center"
-        android:text="@string/start"
-        android:textColor="#D3CFCF"
-        android:textSize="18sp"
+        android:hint="@string/start"
+        android:backgroundTint="#000000"
+        android:textColorHint="#BABABA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clickDescription" />
+
+    <ImageView
+        android:id="@+id/greycatImage"
+        android:layout_width="162dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton"
+        app:srcCompat="@drawable/greycatcard" />
+
+    <ImageView
+        android:id="@+id/greycatImage2"
+        android:layout_width="162dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/greycatcard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

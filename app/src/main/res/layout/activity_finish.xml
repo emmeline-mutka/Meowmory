@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5002E3"
+    android:background="#1A7F9E"
     tools:context=".FinishActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="313dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,14 @@
         android:id="@+id/congrats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
         android:text="@string/congrats"
-        android:textColor="#FFFFFF"
+        android:textColor="#BABABA"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,17 +39,15 @@
 
     <Button
         android:id="@+id/newGame"
-        android:layout_width="110dp"
-        android:layout_height="56dp"
-        android:background="@android:drawable/button_onoff_indicator_off"
-        android:shadowRadius="10"
-        android:text="@string/new_game"
-        android:textColor="#5002E3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#000000"
+        android:hint="@string/new_game"
+        android:textColorHint="#BABABA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/congrats"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintTop_toBottomOf="@+id/congrats" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
