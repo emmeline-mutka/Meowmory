@@ -93,7 +93,7 @@
         app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startButton"
-        app:srcCompat="@drawable/greycatcard" />
+        app:srcCompat="@drawable/graycat" />
 
     <ImageView
         android:id="@+id/greycatImage2"
@@ -104,6 +104,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.718"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/greycatcard" />
+        app:srcCompat="@drawable/graycat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
