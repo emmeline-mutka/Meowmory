@@ -4,7 +4,7 @@
     <string name="click_description">This is a memory game where</string>
     <string name="click_description2">you match pairs to win.</string>
     <string name="start">START</string>
-    <string name="game_description">If you find two pairs you\'re allowed to continue, otherwise it\'s the next person\'s turn.</string>
+    <string name="game_description">If you find a pair you\'re allowed to continue, otherwise it\'s the next person\'s turn.</string>
     <string name="congrats">Congrats all pairs were found!</string>
     <string name="new_game">NEW GAME</string>
 </resources>
