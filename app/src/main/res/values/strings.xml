@@ -7,4 +7,6 @@
     <string name="game_description">If you find a pair you\'re allowed to continue, otherwise it\'s the next person\'s turn.</string>
     <string name="congrats">Congrats all pairs were found!</string>
     <string name="new_game">NEW GAME</string>
+    <string name="highscore">Play time:</string>
+
 </resources>

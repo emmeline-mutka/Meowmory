@@ -8,4 +8,5 @@
     <string name="game_description">Om du hittar ett par får du fortsätta, men om du inte hittar två likadana bilder är det nästa persons tur.</string>
     <string name="congrats">Grattis, alla paren är hittade!</string>
     <string name="new_game">SPELA IGEN</string>
+    <string name="highscore">Spel tid:</string>
 </resources>
