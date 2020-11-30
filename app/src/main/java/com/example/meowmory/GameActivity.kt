@@ -1,19 +1,28 @@
 package com.example.meowmory
 
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.MotionEvent
 import android.widget.Button
-import android.widget.ImageView
+import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_game.*
 import com.example.meowmory.R.drawable.*
-import java.util.*
-import kotlin.system.measureTimeMillis
+import com.example.roomintro.AppDatabase
+import com.example.roomintro.Item
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity(), CoroutineScope {
+
+    private lateinit var job : Job
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main + job
+
+    private lateinit var db : AppDatabase
 
     val cardDown = purpleink
     var clicked = 0
@@ -24,7 +33,11 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        //Starta timer
+
+        job = Job()
+
+        db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "highscore")
+            .fallbackToDestructiveMigration().build()
 
         val startTime = System.currentTimeMillis()
         Log.d("!!!", "Start time; $startTime")
@@ -91,6 +104,14 @@ class GameActivity : AppCompatActivity() {
         Log.d("!!!", "Timer Length, $timerLength")
         val timerLengthSeconds = timerLength / 1000
         Log.d("!!!", "Timer Length Seconds, $timerLengthSeconds")
+        val highscoreEntry = Item(0, timerLengthSeconds)
+        saveScore(highscoreEntry)
+    }
+
+    fun saveScore(highscoreEntry: Item) {
+        launch(Dispatchers.IO) {
+            db.itemDao().insert(highscoreEntry)
+        }
     }
 
     fun goToFinish(startTime: Long) {
