@@ -9,12 +9,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="1dp"
+        android:padding="2dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
-        app:contentPadding="10dp">
+        app:contentPadding="20dp"
+        android:background="#1A7F9E">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,6 +31,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/highscore"
                 android:textSize="30sp"
+                android:textColor="#1A7F9E"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/highscoreTime"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +48,7 @@
                 android:layout_marginRight="50dp"
                 android:text="TextView"
                 android:textSize="30sp"
+                android:textColor="#1A7F9E"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/totalTime"

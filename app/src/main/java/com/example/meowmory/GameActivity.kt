@@ -42,8 +42,7 @@ class GameActivity : AppCompatActivity(), CoroutineScope {
         val startTime = System.currentTimeMillis()
         Log.d("!!!", "Start time; $startTime")
 
-
-        val button = findViewById<Button>(R.id.finishButton)
+        //val button = findViewById<Button>(R.id.finishButton)
 
         val buttons = arrayOf(
             cardbg1, cardbg2, cardbg3, cardbg4, cardbg5, cardbg6,
@@ -55,12 +54,12 @@ class GameActivity : AppCompatActivity(), CoroutineScope {
             blackcat, calicocat, graycat, orangecat, tortiecat, whitecat
         )
 
-        button.setOnClickListener {
+       /* button.setOnClickListener {
 
             val intent = Intent(this, FinishActivity::class.java)
 
             startActivity(intent)
-        }
+        } */
 
         images.shuffle()
 

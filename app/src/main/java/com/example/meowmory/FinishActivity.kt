@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -54,7 +55,7 @@ class FinishActivity : AppCompatActivity(), CoroutineScope {
         button.setOnClickListener {
 
             val intent = Intent(this, GameActivity::class.java)
-
+            DataManager.items.clear()
             startActivity(intent)
         }
     }
@@ -68,5 +69,4 @@ class FinishActivity : AppCompatActivity(), CoroutineScope {
         async(Dispatchers.IO) {
             db.itemDao().getAll()
     }
-
 }
